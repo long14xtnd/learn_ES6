@@ -61,29 +61,29 @@
 //             return this.name + ' ' + this.age
 //         },
 //         [`${salary}ofHailongdev`]: 2000,
-        
+
 //     }
 // }
 // console.log(person('Long', 22));
 // console.log(person('Hải',20).getName())
 
 //Extend Parametter Handling
-    //Default Parametter(trong ES6 hỗ trợ nếu ko tạo giá trị mặc định cho biến)
+//Default Parametter(trong ES6 hỗ trợ nếu ko tạo giá trị mặc định cho biến)
 // function getNameES6(name = 'Long', age = 22) {
 //     console.log(name + ' ' + age);
 // }
 // getNameES6('Long đẹp trai');
 
-    //Rest Parametter
-    //ta thấy ở đây đang truyền dư 2 giá trị là IT và 20000,thì lúc này 2 thằng này sẽ tự được lưu vào thằng rest và rest đóng vai trò như một mảng
-function getNameES6(name = 'Long', age = 22, ...rest) {
-    console.log(name + ' ' + age);
-    console.log("rest" + ' ' + rest[1]);
-}
-getNameES6('Hải', 22, 'IT', 20000);
+//Rest Parametter
+//ta thấy ở đây đang truyền dư 2 giá trị là IT và 20000,thì lúc này 2 thằng này sẽ tự được lưu vào thằng rest và rest đóng vai trò như một mảng
+// function getNameES6(name = 'Long', age = 22, ...rest) {
+//     console.log(name + ' ' + age);
+//     console.log("rest" + ' ' + rest[1]);
+// }
+// getNameES6('Hải', 22, 'IT', 20000);
 
 //Spread Operator
-// VD1: với mảng
+// VD1: với mảng,lúc này thằng toDoListMore sẽ nạp thêm 2 phần tử của toDoList vào chính nó
 // const toDoList = ['đi học', 'đi chơi'];
 // const toDoListMore = ['đá bóng', 'xem phim', ...toDoList];
 // console.log('To Do List More : ', toDoListMore)
@@ -101,7 +101,7 @@ getNameES6('Hải', 22, 'IT', 20000);
 // console.log('worker', worker)
 
 
-//Arrow Function
+//Arrow Function,cách viết myFunction =()=>{}
 // const person1 = {
 //     name: 'Long',
 //     age: 22,
@@ -126,9 +126,10 @@ getNameES6('Hải', 22, 'IT', 20000);
 // }
 // person1.getInfo();
 
-//Destructuring Assigment
+//Destructuring Assigment à một cú pháp cho phép tách dữ liệu được lưu trữ bên trong (nested) Objects hoặc Arrays (tổng quát hơn là các iterable values) và gán chúng cho các biến riêng biệt.
 
 //đôi với mảng
+//Lúc này nó sẽ hiểu first tương ứng với đi học,third tương ứng với đi chơi
 // const toDoList = ['đi học', 'đi chơi', 'đi cafe'];
 // const [first, , third] = toDoList;
 // console.log({first,third})
@@ -141,6 +142,14 @@ getNameES6('Hải', 22, 'IT', 20000);
 // }
 // const { name, test, salary } = person;
 // console.log({ name, test, salary });
+
+// let message = 'Hello';
+// let [a, b] = message;
+// let [x, y, ...z] = message;
+
+// console.log(a, b);    // H e
+// console.log(x, y, z); // H e ['l', 'l', 'o']
+
 
 //đối với default value
 // const list = [11,12];
@@ -194,9 +203,26 @@ getNameES6('Hải', 22, 'IT', 20000);
 // getAllDataFromDB.then((data) => console.log("data", data))
 //     .catch((err) => console.log(err))
 
-
-
+//Hoisting (sử dụng trước khai báo sau)
+doSomeThing();
+function doSomeThing() {
+    x = 10;
+    var x;
+    console.log(x)
+}
 //ES5
+// For of dùng để duyệt qua lần lượt các element (e) trong một iterable (mảng, chuỗi, map,...)
+// let list = [1, 2, 3, 4];
+// for (e of list)
+//     console.log(e);
+
+// For in dùng lặp qua các thuộc tính của object.
+// let obj = {
+//     name: "John",
+//     age: 20
+// }
+// for (p in obj)
+//     console.log(p + ": " + obj[p]);
 
 // var age = 22;
 // var fullname = 'Đoàn Hải Long';
