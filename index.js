@@ -23,10 +23,9 @@
 // console.log(`Năm nay tôi ${myage} tuổi
 // và tôi đã tốt nghiệp năm ${year}`);
 
-
 //Enhanced Object Property
 
-// 1.Property short hand 
+// 1.Property short hand
 //nếu biến truyền vào trùng với tên key trả về thì có thể viết tắt kiểu này còn ko thì phải return { this.name=name,this.age=age}
 // function person(name, age) {
 //     return {
@@ -35,7 +34,6 @@
 //     }
 // }
 // console.log(person('Long',22));
-
 
 // 2.Method property(đơn giản là viết gọn hàm,thay vì phải viết getName:function()
 // function person(name, age) {
@@ -100,7 +98,6 @@
 // }
 // console.log('worker', worker)
 
-
 //Arrow Function,cách viết myFunction =()=>{}
 // const person1 = {
 //     name: 'Long',
@@ -119,7 +116,6 @@
 //         //
 //         const getAge = () => ({ age: this.age })
 
-
 //         getAge();
 //     }
 
@@ -135,11 +131,22 @@
 // console.log({first,third})
 
 //đối với object
-// const person = {
-//     name: 'Long',
-//     age: 22,
-//     salary: 7000000
-// }
+const person = {
+  name: "Long",
+  age: 22,
+  salary: 7000000,
+  info: {
+    name: "haiongdev",
+    address: "Thịnh Liệt",
+  },
+};
+
+var {
+  name: parentName,
+  info: { name: childrenName },
+} = person;
+console.log(parentName);
+console.log(childrenName);
 // const { name, test, salary } = person;
 // console.log({ name, test, salary });
 
@@ -149,7 +156,6 @@
 
 // console.log(a, b);    // H e
 // console.log(x, y, z); // H e ['l', 'l', 'o']
-
 
 //đối với default value
 // const list = [11,12];
@@ -204,12 +210,13 @@
 //     .catch((err) => console.log(err))
 
 //Hoisting (sử dụng trước khai báo sau)
-doSomeThing();
-function doSomeThing() {
-    x = 10;
-    var x;
-    console.log(x)
-}
+// doSomeThing();
+// function doSomeThing() {
+//     x = 10;
+//     var x;
+//     console.log(x)
+// }
+
 //ES5
 // For of dùng để duyệt qua lần lượt các element (e) trong một iterable (mảng, chuỗi, map,...)
 // let list = [1, 2, 3, 4];
@@ -238,7 +245,6 @@ function doSomeThing() {
 //     }
 // }
 // console.log(person('Long', 22).getName());
-
 
 // function getName(name, age) {
 //     console.log(name + ' ' + age);
